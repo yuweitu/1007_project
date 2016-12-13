@@ -1,5 +1,6 @@
 """
-Loading the dataset but also checking the loaded dataset
+This module is responsible for all input and output. 
+
 
 Author: Sheng Liu (sl5924)
 
@@ -36,6 +37,14 @@ def h1bdata_loading():
 
 
 def option_input():
+    """
+    used at every menu, safely input all options, raise and pass exceptions when input invalid.
+
+    return
+    ======
+    a verified option
+
+    """
 
     key = input("Please select one: ")
     options = list('abcdr')
@@ -49,6 +58,10 @@ def option_input():
     return key
 
 def delay_print(s):
+    """
+    used at the begin of the program to print sentences like writting.
+
+    """
     for c in s:
         sys.stdout.write( '%s' % c )
         sys.stdout.flush()

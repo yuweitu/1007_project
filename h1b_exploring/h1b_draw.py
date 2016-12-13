@@ -16,7 +16,6 @@ from chorogrid import Colorbin, Chorogrid
 import matplotlib.pyplot as plt
 import datetime as dt
 import pandas as pd
-#import cairosvg
 
 
 states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', \
@@ -37,11 +36,8 @@ def plot_cloropleth_map(ls,interest,leg,year):
 	cg = Chorogrid('chorogrid/databases/usa_states.csv', states, colors_by_state)
 	cg.set_title(str(year)+' H1b '+str(interest), font_dict={'font-size': 19})
 	cg.set_legend(legend_colors, legend_labels, title=leg)
-	#cg = Chorogrid('chorogrid/databases/usa_states.csv', states, colors_by_state)
 	cg.draw_map(spacing_dict={'legend_offset': [-150,-25]})
-	#cg.draw_squares(spacing_dict={'margin_right': 150}) 
 	cg.done(show=False, save_filename = str(year)+' H1b '+str(interest))
-	#cairosvg.svg2pdf(url=str(year)+' H1b '+str(interest)+'.svg', write_to=str(year)+'H1b '+str(interest)+'.pdf')
 
 	
 

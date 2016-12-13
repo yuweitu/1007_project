@@ -1,8 +1,8 @@
 """
 This is the h1b_data module of the project
-calc_application_pool: calculate application pool to meet functions in different levels
-calc_approve_rate: calculte approve rate to meet functions in different levels
-calc_average_wage: calculate average wage to meet functions in different levels
+calc_application_pool: calculate application pool in different levels
+calc_approve_rate: calculte approve rate in different levels
+calc_average_wage: calculate average wage in different levels
 All calculations are for plot line charts and maps
 
 Created on 2016/12/01

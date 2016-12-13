@@ -1,5 +1,5 @@
 """
-This is module mainly focus on country level interaction
+This is module mainly focus on country level (national level)interaction
 
 Created on 2016/12/01
 Version: 1.0
