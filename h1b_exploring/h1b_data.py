@@ -67,6 +67,8 @@ class h1b_data:
                 APPROVE_RATE_LIST_Country.append(rate)
             return APPROVE_RATE_LIST_Country
         elif level == 'State':
+            if year == 2012:
+                year = 'CA'
             APPROVE_RATE_LIST_State = []
             for YEAR in range(2010,2017):
                 data_year_in_state = data[YEAR][data[YEAR]['EMPLOYER_STATE'] == year]
@@ -93,6 +95,8 @@ class h1b_data:
             return AVERAGE_WAGE_LIST_Country
 
         elif level == 'State':
+            if year == 2012:
+                year = 'CA'
             AVERAGE_WAGE_LIST_State = []
             for YEAR in range(2010,2017):
                 data_year_in_state = data[YEAR][data[YEAR]['EMPLOYER_STATE'] == year]
