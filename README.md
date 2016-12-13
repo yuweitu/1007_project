@@ -20,7 +20,7 @@ $ cd 1007_project
 2. You can directly use our sample data in the repo if you just want to test the system. Otherwise, please download data from dropbox, click [here](https://www.dropbox.com/sh/lk7ec8gjanuwnhk/AADyjXYQw-8imLqCsw3N8PZaa?dl=0)
 to download.
 
-4. move data folder **DataBase** into our repo 1007_project (For testing, please direct use **DataBase** in our repo)
+4. Decompressing the file and move the folder **DataBase** into our repo 1007_project (For testing, please direct use **DataBase** in our repo)
 
 5. Make sure that 'chorogrid', 'DataBase', 'h1b_exploring' and main_new.py are in the repo.
 
