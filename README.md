@@ -138,7 +138,7 @@ If you are interested in city level, type `c`, you will get a table
 
 You can run the test by enter
 ```
-$ python test.py
+$ python -m unittest h1b_test [test].py
 ```
 
 
