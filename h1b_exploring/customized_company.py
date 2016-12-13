@@ -47,7 +47,7 @@ def customized_company(company_data):
             
             if user_input == "quit":
                 sys.exit(1)
-            if user_input == 'return':
+            if user_input.upper() == 'RETURN':
                 break
             
             # matching user's inputting name with company name list
