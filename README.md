@@ -136,9 +136,10 @@ If you are interested in city level, type `c`, you will get a table
 
 ### Part 6: Test
 
-You can run the test by enter
+Go to the h1b_test folder, You can run the test by enter
 ```
-$ python -m unittest h1b_test [test].py
+$ cd h1b_test
+$ python [test].py
 ```
 
 
