@@ -1,4 +1,7 @@
-"average_wage"'''
+'''
+This is module which designed for interactions in industry level
+This function will automatically return a rank of industry with different indicators
+
 Created on Nov 27, 2016
 
 @author: Yovela

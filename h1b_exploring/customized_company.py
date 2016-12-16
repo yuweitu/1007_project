@@ -1,4 +1,9 @@
 '''
+This module is designed for interactions in customized company query
+Users may input  a company name they interested in
+This module will match user's company with company name list in database, and confirm with user
+They will get statistical information about application pools, approve rate, average Wage
+
 Created on Nov 27, 2016
 
 @author: Yovela
@@ -22,7 +27,7 @@ def identify_company_name(user_company, company_name_list):
 
 
 def search_company(company_data, company_name_list):
-    
+        # return statistical information
         df = company_data.newdf.ix[company_name_list]
         print(df.to_string())
         print("The total number of application pool is", df["application_pool"].sum())

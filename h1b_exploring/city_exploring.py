@@ -1,4 +1,9 @@
 '''
+This is module which designed for interactions in city level
+This function will automatically return a list of Top 20 Cities ranked by application pool
+A pdf file contained graphs of application pools, approve rate, average wage will be automatically saved
+
+
 Created on Nov 27, 2016
 
 @author: Yovela
@@ -16,13 +21,16 @@ def city_exploring(data):
     merged_data = pd.concat([data[year] for year in range(2010,2017)], ignore_index= True)
     city_data = city_level(merged_data)
     
+    # rank cities with "application pool" and create a new variable called "approved case"
     city_rank = city_data.newdf.sort_values(by = "application_pool", ascending = False).ix[:20]
     city_rank["unapproved_case"] = city_rank["application_pool"]-city_rank["approved_case"]
 
+    # print rank 
     df = city_rank.ix[:,["application_pool", "approval_rate", "average_wage"]]
     print("The top 20 cities with largest application pools from 2010 to 2016 is ranked below: \n")
     print(df.to_string())
     
+    # save PDF file
     with PdfPages('city_exploring.pdf') as pdf:
         
         plt.figure(figsize = (30,20))

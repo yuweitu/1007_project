@@ -8,43 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import display
 
-class state_level:
-    
-    def __init__(self, dataset):
-        self.dataset = dataset
-        self.newdf = state_level.state(self, dataset)
 
-    def state(self, dataset):
-    # calculate required statistics
-        application_pool = (dataset.groupby("EMPLOYER_STATE").count())["STATUS_APPROVE"]
-        approved_case = (dataset.groupby("EMPLOYER_STATE").sum())["STATUS_APPROVE"]
-        approval_rate = (dataset.groupby("EMPLOYER_STATE").mean())["STATUS_APPROVE"]
-        average_wage = (dataset.groupby("EMPLOYER_STATE").mean())["PREVAILING_WAGE"]
-    
-    # create a new DataFrame and rename indexes
-        state_data = pd.concat([application_pool, approved_case, approval_rate,average_wage], axis =1)
-        state_data.columns.values[0] = "application_pool"
-        state_data.columns.values[1] = "approved_case"
-        state_data.columns.values[2] = "approval_rate"
-        state_data.columns.values[3] = "average_wage"
-    
-        return state_data
-
-    def state_application_pool(self, state_level, state):
-        return state_level.newdf.ix[state, "application_pool"]
-    
-    def state_approved_case(self, state_level, state):
-        return state_level.newdf.ix[state, "approved_case"]
-    
-    def state_approval_rate(self, state_level, state):
-        return state_level.newdf.ix[state, "approval_rate"]
-    
-    def state_average_wage(self, state_level, state):
-        return state_level.newdf.ix[state, "average_wage"]
-        
-    # TODO: inputing a state, return related company and occupation rank
-    
-    
 class city_level:
     
     def __init__(self, dataset):
@@ -80,6 +44,7 @@ class city_level:
         return city_level.newdf.ix[city, "average_wage"]
     
     def city_rank(self, city_level, n, indicator):
+        # rank top n cities by indicator
         city_rank = city_level.newdf.sort_values(by = indicator).ix[-n:, indicator]
         city_rank.plot(kind = "barh", alpha = 0.7)
         plt.title("Top"+ str(n) + " Cities with highest " + indicator)
@@ -87,7 +52,6 @@ class city_level:
 
 '''
 industry level
-TODO: Group occupations
 '''
 
 class industry_level:
@@ -125,6 +89,7 @@ class industry_level:
         return industry_level.newdf.ix[soc_name, "average_wage"]
     
     def occupation_rank(self, industry_level, n, indicator): 
+        # rank top n occupations by indicator
         occupation_rank = industry_level.newdf.sort_values(by = indicator, ascending = False).ix[:n,indicator]
         df = industry_level.newdf.ix[occupation_rank.index, indicator]
         print('Top ' + str(n) + ' ' +indicator + ' occupation groups\n')
@@ -171,6 +136,7 @@ class company_level:
         return company_level.newdf.ix[company_name, "average_wage"]
     
     def company_rank(self, company_level, n, indicator): 
+        # rank top n companies by indicator
         company_rank = company_level.newdf.sort_values(by = indicator, ascending = False).ix[:n,indicator]
         return company_rank    
     

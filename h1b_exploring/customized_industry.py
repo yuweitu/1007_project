@@ -1,4 +1,9 @@
 '''
+This module is designed for interactions in customized industry query
+Users may input  a industry name they interested in
+This module will match user's industry with industry name list in database, and confirm with user
+They will get statistical information about application pools, approve rate, average Wage
+
 Created on Nov 27, 2016
 
 @author: Yovela
@@ -17,6 +22,7 @@ customized_industry(industry_data)
 
 '''
 def identify_user_industry_list(user_input, industry_list):
+    # return all similar industry names
     industry_keyword = user_input.capitalize()
     user_industry_list = []
     k = 0
@@ -29,6 +35,7 @@ def identify_user_industry_list(user_input, industry_list):
         
       
 def confirm_user_industry(user_industry_list):
+    # confirm interested industry with user
     try:
       
         if len(user_industry_list) == 1:
@@ -49,19 +56,20 @@ def confirm_user_industry(user_industry_list):
     return user_industry
 
 def search_industry(industry_name, industry_data):
-    
-        print("The total application pool for " + industry_name + " is: ")
-        print(industry_data.industry_application_pool(industry_data, industry_name))
-        print("The total number of approved case for " + industry_name + " is: ")
-        print(industry_data.industry_approved_case(industry_data, industry_name))
-        print("The average approval rate for " + industry_name + " is: ")
-        print(industry_data.industry_approval_rate(industry_data, industry_name))
-        print("The average wage for " + industry_name + " is: ")
-        print(industry_data.industry_average_wage(industry_data, industry_name))
+    # return statistical information
+    print("The total application pool for " + industry_name + " is: ")
+    print(industry_data.industry_application_pool(industry_data, industry_name))
+    print("The total number of approved case for " + industry_name + " is: ")
+    print(industry_data.industry_approved_case(industry_data, industry_name))
+    print("The average approval rate for " + industry_name + " is: ")
+    print(industry_data.industry_approval_rate(industry_data, industry_name))
+    print("The average wage for " + industry_name + " is: ")
+    print(industry_data.industry_average_wage(industry_data, industry_name))
 
-        return
+    return
     
 def job_title(industry_name, df):
+    # print all related job titles
     job_title = df[df['descrpt'] == industry_name]['SOC_NAME'].drop_duplicates() 
     df = pd.DataFrame(job_title).dropna()
     print("All related job titles are listed below:")

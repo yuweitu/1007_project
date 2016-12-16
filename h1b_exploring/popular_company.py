@@ -1,4 +1,9 @@
 '''
+
+This is module which designed for interactions in company level
+This function will automatically return a list of Top 10 Companies ranked by application pool
+A pdf file contained graphs of application pools, approve rate, average wage will be automatically saved
+
 Created on Nov 27, 2016
 
 @author: Yovela

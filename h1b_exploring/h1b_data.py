@@ -13,7 +13,7 @@ ShengLiu Copyright 2016-2017
 """
 import sys
 import pandas as pd
-import h1b_exploring.h1b_draw
+import h1b_draw
 import numpy as np
 
 class h1b_data:
