@@ -17,7 +17,7 @@ $ git clone [git-repo-url]
 $ cd 1007_project
 ```
 
-2. You can directly use our sample data in the repo if you just want to test the system. Otherwise, please download data from dropbox, click [here](https://www.dropbox.com/sh/lk7ec8gjanuwnhk/AADyjXYQw-8imLqCsw3N8PZaa?dl=0)
+2. You can directly use our sample data in the repo if you just want to function the system. Otherwise, for example, for Testing, please download data from the dropbox, click [here](https://www.dropbox.com/sh/lk7ec8gjanuwnhk/AADyjXYQw-8imLqCsw3N8PZaa?dl=0)
 to download.
 
 4. Decompressing the file and move the folder **DataBase** into our repo 1007_project (For testing, please direct use **DataBase** in our repo)
@@ -136,7 +136,7 @@ If you are interested in city level, type `c`, you will get a table
 
 ### Part 6: Test
 
-Go to the h1b_test folder, You can run the test by enter
+For test, you should download complete data set from [here](https://www.dropbox.com/sh/lk7ec8gjanuwnhk/AADyjXYQw-8imLqCsw3N8PZaa?dl=0), and delete the sample data set. Then go to the h1b_test folder, You can run the test by enter
 ```
 $ cd h1b_test
 $ python [test].py
