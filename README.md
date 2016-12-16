@@ -136,9 +136,8 @@ If you are interested in city level, type `c`, you will get a table
 
 ### Part 6: Test
 
-For test, you should download complete data set from [here](https://www.dropbox.com/sh/lk7ec8gjanuwnhk/AADyjXYQw-8imLqCsw3N8PZaa?dl=0), and delete the sample data set. Then go to the h1b_test folder, You can run the test by enter
+For test, you should download complete data set from [here](https://www.dropbox.com/sh/lk7ec8gjanuwnhk/AADyjXYQw-8imLqCsw3N8PZaa?dl=0), and delete the sample data set. You can run the test by enter
 ```
-$ cd h1b_test
 $ python [test].py
 ```
 
